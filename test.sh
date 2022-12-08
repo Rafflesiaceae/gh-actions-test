@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 rm -rf "$HOME/.whine"
-export WINEARCH=win32
+# export WINEARCH=win32
 export WINEPREFIX="$HOME/.whine"
 # cd "$WINEPREFIX/drive_c/users/raf/Documents/GTA2"
 

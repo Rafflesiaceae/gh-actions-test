@@ -5,6 +5,7 @@ rm -rf "$HOME/.whine"
 export WINEPREFIX="$HOME/.whine"
 # cd "$WINEPREFIX/drive_c/users/raf/Documents/GTA2"
 
+env
 
 if [[ ! -e "gta2-installer.exe" ]]; then
     curl -L -O "https://gtamp.com/GTA2/gta2-installer.exe"

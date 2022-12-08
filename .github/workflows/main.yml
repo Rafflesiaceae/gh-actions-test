@@ -17,7 +17,7 @@ jobs:
           # sudo add-apt-repository multiverse
           # sudo apt-get update
 
-          sudo apt-get install -y wine wine32 curl xdotool
+          sudo apt-get install -y wine curl xdotool
           # sudo apt-get install -y wine32 curl xdotool
       - name: Run headless test
         uses: GabrielBB/xvfb-action@v1

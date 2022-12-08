@@ -1,0 +1,20 @@
+name: CI
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install wine
+        run: sudo apt-get install -y wine curl xdotool
+      - name: Run headless test
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: ./test.sh
+          working-directory: ./ #optional
+          options: #optional

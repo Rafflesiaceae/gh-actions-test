@@ -18,6 +18,8 @@ jobs:
           # sudo apt-get update
 
           sudo apt-get install -y wine curl xdotool
+          sudo dpkg --add-architecture i386 && apt-get update &&
+          sudo apt-get install wine32
           # sudo apt-get install -y wine32 curl xdotool
       - name: Run headless test
         uses: GabrielBB/xvfb-action@v1

@@ -8,5 +8,5 @@ cleanup() {
 trap 'cleanup' EXIT
 
 clean_last_pid_up_fam() {
-    cleanups+=("kill -9 '$?'")
+    cleanups+=("kill -9 '$!'")
 }

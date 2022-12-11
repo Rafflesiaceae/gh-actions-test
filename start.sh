@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set +e
 
+echo "=== start begin ==="
+
 . ./lib.sh
 
 export DISPLAY=:58
@@ -10,5 +12,7 @@ clean_last_pid_up_fam
 
 openbox-session &
 clean_last_pid_up_fam
+
+sleep 5
 
 ./test.sh

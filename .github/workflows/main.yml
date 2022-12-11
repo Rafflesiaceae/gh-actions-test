@@ -21,7 +21,7 @@ jobs:
 
           sudo dpkg --add-architecture i386
           sudo apt-get update
-          sudo apt-get install -y wine32 xvfb wine curl xdotool openbox
+          sudo apt-get install -y curl openbox wine wine32 xdotool xclip xvfb
           # sudo apt-get install -y wine32 curl xdotool
       - name: Run headless tests
         run: ./start.sh

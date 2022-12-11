@@ -56,7 +56,7 @@ echo 'C:\gta2' | clip_in
 ckey v
 key Tab
 key Tab
-key Enter
+key Return
 
 echo "> Installing..."
 
@@ -67,7 +67,7 @@ while [[ ! -e "${gta2d}/test/don't-delete-this-folder.txt" ]]; do
 done
 
 echo "> Installed!"
-key Enter
+key Return
 sleep 0.5
 
 echo "--- installed ---"

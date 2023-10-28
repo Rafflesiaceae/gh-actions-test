@@ -20,8 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Uname
-        run: ./start.sh
+      - name: Entrypoint
+        run: ./entrypoint.sh
 
     #steps:
     #  - name: Checkout

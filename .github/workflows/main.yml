@@ -2,7 +2,25 @@ name: CI
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  build:
+  ci-unixy:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-22.04
+          - ubuntu-20.04
+          - macos-13
+          - macos-12
+          - macos-11
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Entrypoint
+        run: ./entrypoint.sh
+
+  # https://www.msys2.org/docs/ci/
+  ci-windowsers:
     strategy:
       matrix:
         os:
@@ -14,12 +32,18 @@ jobs:
           - macos-12
           - macos-11
     runs-on: ${{ matrix.os }}
-    env:
-      DISPLAY: ":1"
+    defaults:
+      run:
+        shell: msys2 {0}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          install: git mingw-w64-ucrt-x86_64-gcc
       - name: Entrypoint
         run: ./entrypoint.sh
 
